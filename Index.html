@@ -1,0 +1,1406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Dharshana S | Premium Portfolio</title>
+
+<style>
+
+/* =========================
+   RESET
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family: "Segoe UI", Arial, sans-serif;
+    background:#050816;
+    color:white;
+    overflow-x:hidden;
+}
+
+
+/* =========================
+   BACKGROUND
+========================= */
+
+body::before{
+    content:"";
+    position:fixed;
+    width:600px;
+    height:600px;
+    background:radial-gradient(circle, #6c63ff55, transparent 65%);
+    top:-200px;
+    left:-150px;
+    z-index:-5;
+    animation:moveGlow 8s infinite alternate ease-in-out;
+}
+
+body::after{
+    content:"";
+    position:fixed;
+    width:600px;
+    height:600px;
+    background:radial-gradient(circle, #00e5ff44, transparent 65%);
+    bottom:-250px;
+    right:-150px;
+    z-index:-5;
+    animation:moveGlow2 10s infinite alternate ease-in-out;
+}
+
+@keyframes moveGlow{
+    from{
+        transform:translate(0,0);
+    }
+    to{
+        transform:translate(250px,200px);
+    }
+}
+
+@keyframes moveGlow2{
+    from{
+        transform:translate(0,0);
+    }
+    to{
+        transform:translate(-200px,-150px);
+    }
+}
+
+
+/* =========================
+   PARTICLES
+========================= */
+
+.particles{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:-2;
+}
+
+.particle{
+    position:absolute;
+    width:4px;
+    height:4px;
+    background:white;
+    border-radius:50%;
+    opacity:.5;
+    animation:floatParticle linear infinite;
+}
+
+.particle:nth-child(1){left:10%;top:20%;animation-duration:7s;}
+.particle:nth-child(2){left:20%;top:70%;animation-duration:10s;}
+.particle:nth-child(3){left:35%;top:30%;animation-duration:8s;}
+.particle:nth-child(4){left:50%;top:80%;animation-duration:12s;}
+.particle:nth-child(5){left:65%;top:15%;animation-duration:9s;}
+.particle:nth-child(6){left:75%;top:60%;animation-duration:11s;}
+.particle:nth-child(7){left:90%;top:25%;animation-duration:8s;}
+.particle:nth-child(8){left:85%;top:85%;animation-duration:13s;}
+
+@keyframes floatParticle{
+    0%{
+        transform:translateY(0);
+        opacity:.2;
+    }
+    50%{
+        transform:translateY(-80px);
+        opacity:.8;
+    }
+    100%{
+        transform:translateY(0);
+        opacity:.2;
+    }
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+nav{
+    position:fixed;
+    top:20px;
+    left:50%;
+    transform:translateX(-50%);
+    width:90%;
+    max-width:1200px;
+    padding:15px 25px;
+
+    background:rgba(255,255,255,.07);
+    border:1px solid rgba(255,255,255,.15);
+    backdrop-filter:blur(20px);
+
+    border-radius:20px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    z-index:1000;
+
+    box-shadow:0 10px 40px rgba(0,0,0,.3);
+}
+
+.logo{
+    font-size:22px;
+    font-weight:700;
+
+    background:linear-gradient(
+        90deg,
+        #fff,
+        #8c7bff,
+        #00e5ff
+    );
+
+    -webkit-background-clip:text;
+    color:transparent;
+}
+
+nav ul{
+    list-style:none;
+    display:flex;
+    gap:25px;
+}
+
+nav a{
+    color:#ddd;
+    text-decoration:none;
+    font-size:14px;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#00e5ff;
+}
+
+
+/* =========================
+   SECTIONS
+========================= */
+
+section{
+    min-height:100vh;
+    padding:130px 8% 80px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+
+/* =========================
+   HOME
+========================= */
+
+.home{
+    position:relative;
+}
+
+.home-container{
+    width:100%;
+    max-width:1200px;
+
+    display:grid;
+    grid-template-columns:1.1fr .9fr;
+    gap:70px;
+    align-items:center;
+}
+
+.badge{
+    display:inline-block;
+
+    padding:8px 18px;
+
+    border:1px solid #ffffff22;
+    background:#ffffff0a;
+
+    border-radius:30px;
+
+    color:#9dffff;
+
+    font-size:13px;
+
+    margin-bottom:25px;
+
+    animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+    50%{
+        box-shadow:0 0 25px #00e5ff33;
+    }
+}
+
+.home h1{
+    font-size:clamp(45px,7vw,85px);
+    line-height:1.05;
+    margin-bottom:20px;
+}
+
+.gradient-text{
+    background:linear-gradient(
+        90deg,
+        #ffffff,
+        #8c7bff,
+        #00e5ff
+    );
+
+    -webkit-background-clip:text;
+    color:transparent;
+}
+
+.home h2{
+    font-size:28px;
+    font-weight:400;
+    color:#aaa;
+    margin-bottom:20px;
+}
+
+.home p{
+    color:#aaa;
+    line-height:1.8;
+    max-width:600px;
+    font-size:17px;
+}
+
+.buttons{
+    margin-top:35px;
+    display:flex;
+    gap:18px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    padding:14px 28px;
+    border-radius:12px;
+    text-decoration:none;
+    font-weight:600;
+    transition:.3s;
+}
+
+.primary{
+    background:linear-gradient(
+        135deg,
+        #6c63ff,
+        #00bcd4
+    );
+
+    color:white;
+
+    box-shadow:0 10px 30px #6c63ff33;
+}
+
+.primary:hover{
+    transform:translateY(-5px);
+    box-shadow:0 15px 40px #00e5ff44;
+}
+
+.secondary{
+    border:1px solid #ffffff22;
+    color:white;
+    background:#ffffff08;
+}
+
+.secondary:hover{
+    background:#ffffff15;
+}
+
+
+/* =========================
+   PROFILE
+========================= */
+
+.profile-area{
+    display:flex;
+    justify-content:center;
+}
+
+.profile-card{
+    position:relative;
+
+    width:330px;
+    height:430px;
+
+    border-radius:30px;
+
+    background:linear-gradient(
+        145deg,
+        #ffffff14,
+        #ffffff04
+    );
+
+    border:1px solid #ffffff22;
+
+    backdrop-filter:blur(20px);
+
+    box-shadow:
+        0 30px 80px rgba(0,0,0,.5);
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    overflow:hidden;
+
+    animation:cardFloat 5s infinite ease-in-out;
+}
+
+@keyframes cardFloat{
+    50%{
+        transform:translateY(-15px);
+    }
+}
+
+.profile-card::before{
+    content:"";
+
+    position:absolute;
+
+    width:220px;
+    height:220px;
+
+    background:#6c63ff55;
+
+    filter:blur(70px);
+
+    top:-50px;
+    right:-50px;
+}
+
+.profile-card img{
+    position:relative;
+
+    width:260px;
+    height:330px;
+
+    object-fit:cover;
+
+    border-radius:25px;
+
+    border:4px solid #ffffff22;
+
+    box-shadow:0 20px 50px rgba(0,0,0,.5);
+}
+
+
+/* =========================
+   SECTION TITLE
+========================= */
+
+.section-title{
+    text-align:center;
+    margin-bottom:60px;
+}
+
+.section-title span{
+    color:#00e5ff;
+    font-size:14px;
+    letter-spacing:4px;
+}
+
+.section-title h2{
+    font-size:50px;
+    margin-top:10px;
+}
+
+
+/* =========================
+   ABOUT
+========================= */
+
+.about-container{
+    max-width:1100px;
+    width:100%;
+}
+
+.about-box{
+    padding:45px;
+
+    background:#ffffff08;
+
+    border:1px solid #ffffff15;
+
+    border-radius:25px;
+
+    backdrop-filter:blur(15px);
+
+    box-shadow:0 20px 60px rgba(0,0,0,.3);
+
+    line-height:1.9;
+
+    color:#aaa;
+
+    font-size:17px;
+}
+
+.about-box strong{
+    color:white;
+}
+
+
+/* =========================
+   SKILLS
+========================= */
+
+.skills-container{
+    max-width:1100px;
+    width:100%;
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(220px,1fr));
+
+    gap:25px;
+}
+
+.skill{
+    padding:30px;
+
+    border-radius:22px;
+
+    background:#ffffff08;
+
+    border:1px solid #ffffff15;
+
+    transition:.4s;
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+.skill::before{
+    content:"";
+
+    position:absolute;
+
+    width:100px;
+    height:100px;
+
+    background:#6c63ff33;
+
+    filter:blur(50px);
+
+    top:-30px;
+    right:-30px;
+}
+
+.skill:hover{
+    transform:translateY(-10px);
+
+    border-color:#00e5ff55;
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,.4);
+}
+
+.skill-icon{
+    font-size:40px;
+    margin-bottom:20px;
+}
+
+.skill h3{
+    margin-bottom:10px;
+}
+
+.skill p{
+    color:#888;
+}
+
+
+/* =========================
+   PROJECTS
+========================= */
+
+.projects-container{
+    max-width:1100px;
+    width:100%;
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(280px,1fr));
+
+    gap:30px;
+}
+
+.project{
+    min-height:300px;
+
+    padding:35px;
+
+    border-radius:25px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff0c,
+            #ffffff03
+        );
+
+    border:1px solid #ffffff15;
+
+    transition:.4s;
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+.project:hover{
+    transform:translateY(-12px) scale(1.02);
+
+    border-color:#8c7bff66;
+
+    box-shadow:
+        0 25px 60px rgba(0,0,0,.5);
+}
+
+.project-number{
+    font-size:14px;
+    color:#00e5ff;
+    margin-bottom:25px;
+}
+
+.project h3{
+    font-size:25px;
+    margin-bottom:15px;
+}
+
+.project p{
+    color:#888;
+    line-height:1.7;
+}
+
+.project-link{
+    display:inline-block;
+    margin-top:25px;
+    color:#00e5ff;
+    text-decoration:none;
+}
+
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact-container{
+    max-width:800px;
+    width:100%;
+    text-align:center;
+}
+
+.contact-card{
+    padding:50px;
+
+    background:#ffffff08;
+
+    border:1px solid #ffffff15;
+
+    border-radius:30px;
+
+    backdrop-filter:blur(20px);
+
+    box-shadow:0 20px 70px rgba(0,0,0,.4);
+}
+
+.contact-card h2{
+    font-size:38px;
+    margin-bottom:20px;
+}
+
+.contact-card p{
+    color:#888;
+    margin-bottom:30px;
+}
+
+.contact-info{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    flex-wrap:wrap;
+}
+
+.contact-info div{
+    padding:15px 20px;
+
+    border-radius:12px;
+
+    background:#ffffff08;
+
+    border:1px solid #ffffff12;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    text-align:center;
+    padding:30px;
+
+    color:#666;
+
+    border-top:1px solid #ffffff0c;
+}
+
+
+/* =========================
+   SLIDE ANIMATION
+========================= */
+
+.reveal{
+    opacity:0;
+    transform:translateY(60px);
+    transition:1s ease;
+}
+
+.reveal.active{
+    opacity:1;
+    transform:translateY(0);
+}
+
+
+/* =========================
+   CURSOR GLOW
+========================= */
+
+.cursor-glow{
+    position:fixed;
+
+    width:300px;
+    height:300px;
+
+    border-radius:50%;
+
+    background:radial-gradient(
+        circle,
+        #6c63ff22,
+        transparent 65%
+    );
+
+    pointer-events:none;
+
+    transform:translate(-50%,-50%);
+
+    z-index:-1;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:850px){
+
+    nav{
+        width:94%;
+    }
+
+    nav ul{
+        display:none;
+    }
+
+    .home-container{
+        grid-template-columns:1fr;
+        text-align:center;
+    }
+
+    .home p{
+        margin:auto;
+    }
+
+    .buttons{
+        justify-content:center;
+    }
+
+    .profile-card{
+        width:280px;
+        height:360px;
+    }
+
+    .profile-card img{
+        width:220px;
+        height:280px;
+    }
+
+    .section-title h2{
+        font-size:38px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- CURSOR LIGHT -->
+
+<div class="cursor-glow" id="cursorGlow"></div>
+
+
+<!-- PARTICLES -->
+
+<div class="particles">
+
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+
+</div>
+
+
+<!-- NAVIGATION -->
+
+<nav>
+
+    <div class="logo">
+        DHARSHANA.S
+    </div>
+
+    <ul>
+
+        <li>
+            <a href="#home">Home</a>
+        </li>
+
+        <li>
+            <a href="#about">About</a>
+        </li>
+
+        <li>
+            <a href="#skills">Skills</a>
+        </li>
+
+        <li>
+            <a href="#projects">Projects</a>
+        </li>
+
+        <li>
+            <a href="#contact">Contact</a>
+        </li>
+
+    </ul>
+
+</nav>
+
+
+
+<!-- =========================
+     HOME
+========================= -->
+
+<section class="home" id="home">
+
+    <div class="home-container">
+
+        <div class="home-content reveal">
+
+            <div class="badge">
+                ✦ WELCOME TO MY PORTFOLIO
+            </div>
+
+            <h1>
+
+                Hi, I'm
+
+                <span class="gradient-text">
+                    Dharshana
+                </span>
+
+            </h1>
+
+            <h2>
+                <span id="typing"></span>
+            </h2>
+
+            <p>
+
+                A passionate Computer Science student
+                who loves creating beautiful digital
+                experiences, exploring technology and
+                turning ideas into meaningful projects.
+
+            </p>
+
+
+            <div class="buttons">
+
+                <a href="#projects" class="btn primary">
+                    Explore My Work →
+                </a>
+
+                <a href="#contact" class="btn secondary">
+                    Let's Connect
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- PROFILE -->
+
+        <div class="profile-area reveal">
+
+            <div class="profile-card">
+
+                <img
+                    src="photo.jpg"
+                    alt="Dharshana"
+                >
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     ABOUT
+========================= -->
+
+<section id="about">
+
+    <div class="about-container reveal">
+
+        <div class="section-title">
+
+            <span>01 — ABOUT ME</span>
+
+            <h2>
+                A Little About Me
+            </h2>
+
+        </div>
+
+
+        <div class="about-box">
+
+            <p>
+
+                Hello! I'm
+                <strong>Dharshana S</strong>.
+
+                I am a Computer Science student
+                passionate about technology,
+                programming and creative design.
+
+                <br><br>
+
+                I enjoy learning new technologies
+                and developing projects that combine
+                <strong>functionality, creativity
+                and beautiful user experiences.</strong>
+
+                <br><br>
+
+                My goal is to continuously improve
+                my technical knowledge and build
+                innovative solutions that can make
+                a positive impact.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     SKILLS
+========================= -->
+
+<section id="skills">
+
+    <div class="about-container reveal">
+
+        <div class="section-title">
+
+            <span>02 — EXPERTISE</span>
+
+            <h2>
+                My Skills
+            </h2>
+
+        </div>
+
+
+        <div class="skills-container">
+
+
+            <div class="skill">
+
+                <div class="skill-icon">
+                    🌐
+                </div>
+
+                <h3>
+                    HTML
+                </h3>
+
+                <p>
+                    Creating structured and
+                    semantic web pages.
+                </p>
+
+            </div>
+
+
+            <div class="skill">
+
+                <div class="skill-icon">
+                    🎨
+                </div>
+
+                <h3>
+                    CSS
+                </h3>
+
+                <p>
+                    Designing modern and
+                    responsive interfaces.
+                </p>
+
+            </div>
+
+
+            <div class="skill">
+
+                <div class="skill-icon">
+                    ⚡
+                </div>
+
+                <h3>
+                    JavaScript
+                </h3>
+
+                <p>
+                    Building interactive
+                    web experiences.
+                </p>
+
+            </div>
+
+
+            <div class="skill">
+
+                <div class="skill-icon">
+                    🐍
+                </div>
+
+                <h3>
+                    Python
+                </h3>
+
+                <p>
+                    Developing logical
+                    programming solutions.
+                </p>
+
+            </div>
+
+
+            <div class="skill">
+
+                <div class="skill-icon">
+                    💡
+                </div>
+
+                <h3>
+                    Problem Solving
+                </h3>
+
+                <p>
+                    Finding creative solutions
+                    to complex problems.
+                </p>
+
+            </div>
+
+
+            <div class="skill">
+
+                <div class="skill-icon">
+                    🚀
+                </div>
+
+                <h3>
+                    Creativity
+                </h3>
+
+                <p>
+                    Turning ideas into
+                    meaningful projects.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     PROJECTS
+========================= -->
+
+<section id="projects">
+
+    <div class="about-container reveal">
+
+        <div class="section-title">
+
+            <span>03 — MY WORK</span>
+
+            <h2>
+                Featured Projects
+            </h2>
+
+        </div>
+
+
+        <div class="projects-container">
+
+
+            <div class="project">
+
+                <div class="project-number">
+                    PROJECT 01
+                </div>
+
+                <h3>
+                    Personal Portfolio
+                </h3>
+
+                <p>
+                    A modern personal portfolio
+                    designed to showcase my
+                    skills, projects and achievements.
+                </p>
+
+                <a
+                    href="#"
+                    class="project-link"
+                >
+                    View Project →
+                </a>
+
+            </div>
+
+
+
+            <div class="project">
+
+                <div class="project-number">
+                    PROJECT 02
+                </div>
+
+                <h3>
+                    AI Based Project
+                </h3>
+
+                <p>
+                    An innovative project exploring
+                    artificial intelligence and
+                    modern technology.
+                </p>
+
+                <a
+                    href="#"
+                    class="project-link"
+                >
+                    View Project →
+                </a>
+
+            </div>
+
+
+
+            <div class="project">
+
+                <div class="project-number">
+                    PROJECT 03
+                </div>
+
+                <h3>
+                    Web Application
+                </h3>
+
+                <p>
+                    An interactive web application
+                    focused on usability,
+                    creativity and performance.
+                </p>
+
+                <a
+                    href="#"
+                    class="project-link"
+                >
+                    View Project →
+                </a>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section id="contact">
+
+    <div class="contact-container reveal">
+
+        <div class="section-title">
+
+            <span>04 — CONTACT</span>
+
+            <h2>
+                Let's Connect
+            </h2>
+
+        </div>
+
+
+        <div class="contact-card">
+
+            <h2>
+                Have an idea? ✨
+            </h2>
+
+            <p>
+                I'd love to connect, learn and
+                create something amazing.
+            </p>
+
+
+            <div class="contact-info">
+
+                <div>
+                    📧 yourmail@example.com
+                </div>
+
+                <div>
+                    💼 LinkedIn
+                </div>
+
+                <div>
+                    🐙 GitHub
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    © 2026 Dharshana S — Designed with ✦
+
+</footer>
+
+
+
+<script>
+
+/* =========================
+   TYPING EFFECT
+========================= */
+
+const words = [
+    "Creative Developer",
+    "Computer Science Student",
+    "Web Designer",
+    "Future Innovator"
+];
+
+let wordIndex = 0;
+let charIndex = 0;
+let deleting = false;
+
+const typing = document.getElementById("typing");
+
+function typeEffect(){
+
+    const word = words[wordIndex];
+
+    if(!deleting){
+
+        typing.textContent =
+            word.substring(0,charIndex + 1);
+
+        charIndex++;
+
+        if(charIndex === word.length){
+
+            deleting = true;
+
+            setTimeout(typeEffect,1200);
+
+            return;
+        }
+
+    }else{
+
+        typing.textContent =
+            word.substring(0,charIndex - 1);
+
+        charIndex--;
+
+        if(charIndex === 0){
+
+            deleting = false;
+
+            wordIndex++;
+
+            if(wordIndex === words.length){
+                wordIndex = 0;
+            }
+
+        }
+
+    }
+
+    setTimeout(
+        typeEffect,
+        deleting ? 50 : 100
+    );
+}
+
+typeEffect();
+
+
+
+/* =========================
+   SCROLL REVEAL
+========================= */
+
+const reveals =
+    document.querySelectorAll(".reveal");
+
+function revealOnScroll(){
+
+    reveals.forEach(element => {
+
+        const windowHeight =
+            window.innerHeight;
+
+        const elementTop =
+            element.getBoundingClientRect().top;
+
+        if(elementTop < windowHeight - 100){
+
+            element.classList.add("active");
+
+        }
+
+    });
+
+}
+
+window.addEventListener(
+    "scroll",
+    revealOnScroll
+);
+
+revealOnScroll();
+
+
+
+/* =========================
+   CURSOR GLOW
+========================= */
+
+const glow =
+    document.getElementById("cursorGlow");
+
+document.addEventListener(
+    "mousemove",
+    function(e){
+
+        glow.style.left =
+            e.clientX + "px";
+
+        glow.style.top =
+            e.clientY + "px";
+
+    }
+);
+
+
+/* =========================
+   NAV ACTIVE EFFECT
+========================= */
+
+const links =
+    document.querySelectorAll("nav a");
+
+links.forEach(link => {
+
+    link.addEventListener(
+        "click",
+        function(){
+
+            links.forEach(l =>
+                l.style.color = "#ddd"
+            );
+
+            this.style.color =
+                "#00e5ff";
+
+        }
+    );
+
+});
+
+</script>
+
+
+</body>
+</html>
